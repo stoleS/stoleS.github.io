@@ -42,7 +42,10 @@
     padding: 0px; }
 
   .list-group h1 {
-    text-align: center; } }
+    text-align: center; }
+
+  .single-post-title {
+    font-size: 2rem !important; } }
 /* NAV RESPONSIVE STYLES END*/
 .card-image {
   min-height: 350px;
@@ -128,6 +131,24 @@ a {
     text-align: justify; }
   .post-wrapper h1 {
     color: #25283d; }
+
+.post-author {
+  margin-bottom: 2rem;
+  font-size: 1rem !important; }
+
+.single-post-header {
+  border: none !important;
+  margin-bottom: 2.5rem; }
+  .single-post-header .single-post-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold; }
+
+.single-post-header:hover {
+  box-shadow: none !important; }
+
+.card-img-overlay {
+  background-color: rgba(25, 149, 173, 0.9); }
 
 /* POST PAGE STYLES END */
 /* ARCHIVE PAGE STYLES */
