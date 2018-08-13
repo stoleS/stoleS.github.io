@@ -45,10 +45,13 @@
     text-align: center; }
 
   .single-post-title {
-    font-size: 2rem !important; } }
+    font-size: 2rem !important; }
+
+  .card-image {
+    min-height: 250px !important; } }
 /* NAV RESPONSIVE STYLES END*/
 .card-image {
-  min-height: 350px;
+  min-height: 370px;
   background-position: center;
   background-size: cover; }
 
