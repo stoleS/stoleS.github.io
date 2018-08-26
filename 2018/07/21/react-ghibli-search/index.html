@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" type="image/png" sizes="32x32" href=http://0.0.0.0:4000/assets/favicon.png>
+  <title>Predrag Stošić</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="stylesheet" href="/assets/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+
+<body style="background-color: #F0F2F4" class="has-navbar-fixed-top">
+<script src="/assets/loading.js"></script>
+
+<!-- START NAV -->
+<nav class="navbar is-fixed-top">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item logo" href="/">
+        <img src=http://0.0.0.0:4000/assets/logo.png alt="Stole">
+      </a>
+      <span class="navbar-burger burger" data-target="navbarMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </div>
+    <div id="navbarMenu" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item is-active" href="/">
+          Home
+        </a>
+        <a class="navbar-item" href="/archive">
+          Archive
+        </a>
+        
+        <a class="navbar-item" href="/contact">
+          Contact
+        </a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Social
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" target="_blank" href="https://github.com/stoleS">
+              <span class="icon">
+                <i class="fab fa-github"></i>
+              </span>
+              <span>GitHub</span>
+            </a>
+            <a class="navbar-item" target="_blank" href="https://linkedin.com/in/predragstosic96">
+              <span class="icon">
+                <i class="fab fa-linkedin"></i>
+              </span>
+              <span>LinkedIn</span>
+            </a>
+            <a class="navbar-item" target="_blank" href="https://www.facebook.com/stosic.predrag.96">
+              <span class="icon">
+                <i class="fab fa-facebook-square"></i>
+              </span>
+              <span>Facebook</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- END NAV -->
+<section class="hero is-info is-medium is-bold">
+  <div class="hero-body" style="background-image:url(/assets/ghibli-search/ghibli-search.png);">
+    <div class="container has-text-centered">
+      <h1 class="subtitle is-2" id="type">Studio Ghibli - movies app</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <!-- START ARTICLE FEED -->
+  <section class="articles">
+    <div class="column is-8 is-offset-2">
+      <!-- START ARTICLE -->
+      <div class="card article">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-center">
+        <img src=/assets/10print.png class="author-image" alt="Placeholder image">
+      </div>
+      <div class="media-content has-text-centered">
+        <p class="subtitle is-6 article-subtitle">
+          <a href="#">Predrag Stošić</a>
+        </p>
+        <p class="subtitle is-6 article-subtitle">
+        21. July 2018
+        &middot;
+        
+        
+          10 min read
+        
+        </p>
+        <div class="divider has-background-grey-light"></div>
+        <figure class="image">
+          <img src=/assets/ghibli-search/ghibli-search.png>
+        </figure>
+      </div>
+    </div>
+    <div class="content article-body">
+      <blockquote>
+  <p>Notice: This article is not a tutorial, but just a simple and quick overview on how this app was built.</p>
+</blockquote>
+
+<p>GitHub repository <a href="https://github.com/toddmotto/public-apis">public-apis</a> is a great place if you’re looking for a free API for your next project. One of them is Studio’s Ghibli API which contains a list of their movies, as well as a list of characters, places etc. Since I’m learning React, I decided to try it out in a mini project, simply called Ghibli Search. In this article, I’ll show you how I made this simple application. Code in this article will be simplified (without props, classes etc.).</p>
+
+<h3 id="dependencies">Dependencies</h3>
+
+<p>Before we begin, here is a list of dependencies I used to build this app:</p>
+
+<ul>
+  <li><a href="https://reactstrap.github.io/">Reactstrap</a></li>
+  <li><a href="https://fontawesome.com/how-to-use/on-the-web/using-with/react">FontAwesome</a></li>
+  <li><a href="https://github.com/kolodny/immutability-helper">Immutability-helper</a></li>
+</ul>
+
+<p>You can install each of them like this:</p>
+
+<ul>
+  <li>Reactstrap (check their website for full explanation on how to implement it)</li>
+</ul>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--save</span> reactstrap react react-dom
+</code></pre></div></div>
+
+<ul>
+  <li>FontAwesome</li>
+</ul>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm i <span class="nt">--save</span> @fortawesome/fontawesome-svg-core
+npm i <span class="nt">--save</span> @fortawesome/free-solid-svg-icons
+npm i <span class="nt">--save</span> @fortawesome/react-fontawesome
+</code></pre></div></div>
+
+<ul>
+  <li>Immutability-helper</li>
+</ul>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install </span>immutability-helper <span class="nt">--save</span>
+</code></pre></div></div>
+
+<h3 id="breaking-the-ui-into-components">Breaking the UI into components</h3>
+
+<p>Since React is built around components, the first thing we want to do when creating an app is to break it’s UI into components.</p>
+
+<p><img src="/assets/ghibli-search/ghibli-search-components.png" alt="Ghibli Search" /></p>
+
+<p>According to this, our components are as following:</p>
+
+<ul>
+  <li>Main app</li>
+  <li>Searchbar</li>
+  <li>Sidebar</li>
+  <li>Movie</li>
+</ul>
+
+<p>This layout could be broken into more simpler components, but for the sake of simplicity we’ll keep them like this.</p>
+
+<h3 id="main-component">Main component</h3>
+
+<p>Our app component, stripped of all styling and classes, should look like this:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">SearchBar</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="nx">Container</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Row</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">Collapse</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">Nav</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">Sidebar</span> <span class="o">/&gt;</span>
+          <span class="o">&lt;</span><span class="sr">/Nav</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/Collapse</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">Col</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">Row</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">main</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/Row</span><span class="err">&gt;
+</span>          <span class="p">{</span><span class="nx">loading</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="sr">/Col</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/Row</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/Container</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>As you can see, it simply renders SearchBar and Sidebar component including Bootstrap layout. Our movie component is rendered conditionaly. What component will render inside <em>{main}</em> dependens on what element is selected in sidebar. I’ll explain how this is implemented in the next step.</p>
+
+<h3 id="fetching-data">Fetching data</h3>
+
+<p>Since the main, or landing page is displaying a list of movies we need to fetch information about them from Ghibli API as soon as component renders. We could do this using default <em>fetch()</em> function or some third party library like <em>axios</em>. For doing any action after component renders we can use <em>componentDidMount()</em> lifecycle method which is invoked immediately after a component is mounted. You can find more about lifecycle methods in React <a href="https://reactjs.org/docs/react-component.html">here</a>. Here is an example of how it can be used in practice for fetching list of movies:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">fetchPeople</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">"https://ghibliapi.herokuapp.com/films"</span><span class="p">;</span>
+    <span class="nx">fetch</span><span class="p">(</span><span class="nx">people</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span> <span class="o">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="na">movies</span><span class="p">:</span> <span class="nx">data</span> <span class="p">})</span>
+      <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h3 id="conditionaly-rendering-components">Conditionaly rendering components</h3>
+
+<p>Since we have multiple choices in the side bar we have to find a way to rerender our main component with the selected one. This could be done with React’s router, but for the sake of simplicity I did this with conditionaly rendering. Selected menu is stored in application state. We simply check what is current selected menu and assing corresponding component to <em>main</em> variable, like this:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">menu</span> <span class="o">===</span> <span class="s2">"all"</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">main</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">movies</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">movie</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">Movie</span> <span class="o">/&gt;</span><span class="p">;</span>
+  <span class="p">});</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">menu</span> <span class="o">===</span> <span class="s2">"people"</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">main</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">Person</span> <span class="o">/&gt;</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">menu</span> <span class="o">===</span> <span class="s2">"locations"</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">main</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">Location</span> <span class="o">/&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="movie-component">Movie component</h3>
+
+<p>This component is a home for single movie information like title, poster image, score etc. For styling I used Bootstrap cards. Our movie component initialy shows poster, Rotten Tomatoes score, title, year and director. But when we click on it, popover is rendered (also from Bootstrap) with added description and producer. This is the simplified layout of this component:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">Col</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">Card</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">CardImg</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Badge</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">score</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/Badge</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">CardText</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">title</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/CardText</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">CardText</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="nx">releaseDate</span><span class="p">},</span> <span class="p">{</span><span class="nx">director</span><span class="p">}</span>
+      <span class="o">&lt;</span><span class="sr">/CardText</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/Card</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="nx">Popover</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">PopoverBody</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">title</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">releaseDate</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">description</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">b</span><span class="o">&gt;</span><span class="nx">Director</span><span class="p">:</span><span class="o">&lt;</span><span class="sr">/b&gt; {director</span><span class="err">}
+</span>        <span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">b</span><span class="o">&gt;</span><span class="nx">Producer</span><span class="p">:</span><span class="o">&lt;</span><span class="sr">/b&gt; {producer</span><span class="err">}
+</span>        <span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/PopoverBody</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/Popover</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/Col</span><span class="err">&gt;
+</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="handling-user-input-and-filtering-data">Handling user input and filtering data</h3>
+
+<p>The next thing we need to do is handle user input and filter movie list according to input value. To achieve this we need to do two things:</p>
+
+<ul>
+  <li>Listen for user inputs with the <em>onChange</em> event listener, so that we can trigger the onSearch method</li>
+  <li>Set the value of the input field explicitly using <em>this.state.search</em></li>
+</ul>
+
+<p>After <em>search</em> property in the <em>state</em> is changed we use that value to filter our movie list and display rerendered list with only those movies. To filter the movies we need to do the following:</p>
+
+<ul>
+  <li>First, we need the copy of <em>movies</em> array so that the old one won’t be erased while filtering</li>
+  <li>Second, we need to run regular expression on movie titles using <em>filter()</em> function like this:</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">filterMovies</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">movie</span> <span class="o">=&gt;</span>
+  <span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="s2">"i"</span><span class="p">).</span><span class="nx">exec</span><span class="p">(</span><span class="nx">movie</span><span class="p">.</span><span class="nx">title</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p>Here we are executing regular expresion on <em>movie.title</em> and comparing it with our user input (<em>e.target.value</em>).</p>
+
+<h3 id="sorting-data">Sorting data</h3>
+
+<p>In app’s sidebar we have an option to sort our data in following ways:</p>
+
+<ul>
+  <li>Year ascending (default)</li>
+  <li>Year descending</li>
+  <li>Rating ascending</li>
+  <li>Rating descending</li>
+</ul>
+
+<p>To get the selected choice we can create <em>handleChecked()</em> function which takes <em>choice</em> as an argument. <em>Choice</em> argument is provided by our sidebar component when we call <em>handleChecked()</em> function. After our choice is received we can store it in our state and then sort the movies. To sort the movies we can use <em>sort()</em> function:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sortedMovies</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">release_date</span> <span class="o">-</span> <span class="nx">b</span><span class="p">.</span><span class="nx">release_date</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Here, we are sorting our movies by year ascending. You can find more about <em>sort()</em> function <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">here</a> .</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>This is very a simple example on how to use an API with React. As I said at the beginning, this is not a tutorial, rather just an overview of this app. If you want to learn more about React, check the official React <a href="https://reactjs.org/docs/getting-started.html">documentation</a>. Thanks for reading and happy coding.</p>
+
+    </div>
+  </div>
+</div>
+<nav class="pagination is-centered" role="navigation" aria-label="pagination">
+   
+  
+    <a href="/2018/07/13/projects-blog/" class="pagination-next">Projects Blog &raquo;</a>
+  
+</nav>
+
+      <!-- END ARTICLE -->
+    </div>
+  </section>
+  <!-- END ARTICLE FEED -->
+</div>
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <a href="/">Predrag Stošić</a>, 2018. The source code is licensed
+      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content is licensed
+      <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC ANS 4.0</a><br><br>Powered by:<br><a href=""><img src="https://raw.githubusercontent.com/jekyll/brand/master/jekyll-logo-black-red-transparent.png"
+          alt="Jekyll" width="128" height="24"></a>
+      <br>
+      <a href="https://bulma.io">
+        <img src="https://bulma.io/images/made-with-bulma--semiblack.png" alt="Made with Bulma" width="128" height="24">
+      </a>
+    </p>
+    <p>Original theme by <a href="https://github.com/dansup">@dansup</a></p>
+  </div>
+</footer>
+<script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+
+    // Get all "navbar-burger" elements
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    // Check if there are any navbar burgers
+    if ($navbarBurgers.length > 0) {
+
+      // Add a click event on each of them
+      $navbarBurgers.forEach(el => {
+        el.addEventListener('click', () => {
+
+          // Get the target from the "data-target" attribute
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+
+          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+
+        });
+      });
+    }
+  });
+
+  // Typing effect
+  let i = 0;
+  let text = document.getElementById("type").innerHTML;
+  document.getElementById("type").innerHTML = "";
+  let speed = 50;
+
+  function type() {
+    if (i < text.length) {
+      document.getElementById("type").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(type, speed);
+    }
+  }
+
+  function removeLoader() {
+    document.getElementById("loader").classList.remove("is-active");
+  }
+
+  window.addEventListener("load", () => {
+    const loadTime = window.performance.timing.domContentLoadedEventEnd- window.performance.timing.navigationStart;
+    let addedTime = 0;
+
+    if(loadTime <= 1000) {
+      addedTime = 1000 - loadTime;
+    }
+
+    setTimeout(removeLoader, addedTime);
+    type();
+  });
+  
+</script>
+</body>
+
+</html>

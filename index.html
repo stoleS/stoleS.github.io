@@ -4,77 +4,231 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" type="image/png" sizes="32x32" href=http://0.0.0.0:4000/assets/favicon.png>
+  <title>Predrag Stošić</title>
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="stylesheet" href="/assets/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 
-<body class="bg-light">
-<div class="wrapper">
-    <div class="container">
-  <div class="row">
-    <div class="col-md-6 col-sm-12">
-      <h1 class="my-0 mr-md-auto font-weight-bold display-4">
-        <a href="/" class="title">
-          stole
-        </a>
-      </h1>
-    </div>
+<body style="background-color: #F0F2F4" class="has-navbar-fixed-top">
+<script src="/assets/loading.js"></script>
 
-    <div class="col-md-6 col-sm-12 d-flex align-items-center justify-content-end">
-      <nav class="my-2 my-md-0 items line-up">
-        <a class="p-1 m-1 text-muted font-weight-bold" href="https://github.com/stoleS" target="_blank">github</a>
-        <a class="p-1 m-1 text-muted font-weight-bold" href="/archive">archive</a>
-        <a class="p-1 m-1 text-muted font-weight-bold" href="#">about</a>
-        <a class="p-1 m-1 text-muted font-weight-bold" href="#">contact</a>
-      </nav>
+<!-- START NAV -->
+<nav class="navbar is-fixed-top">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item logo" href="/">
+        <img src=http://0.0.0.0:4000/assets/logo.png alt="Stole">
+      </a>
+      <span class="navbar-burger burger" data-target="navbarMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
     </div>
+    <div id="navbarMenu" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item is-active" href="/">
+          Home
+        </a>
+        <a class="navbar-item" href="/archive">
+          Archive
+        </a>
+        
+        <a class="navbar-item" href="/contact">
+          Contact
+        </a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Social
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" target="_blank" href="https://github.com/stoleS">
+              <span class="icon">
+                <i class="fab fa-github"></i>
+              </span>
+              <span>GitHub</span>
+            </a>
+            <a class="navbar-item" target="_blank" href="https://linkedin.com/in/predragstosic96">
+              <span class="icon">
+                <i class="fab fa-linkedin"></i>
+              </span>
+              <span>LinkedIn</span>
+            </a>
+            <a class="navbar-item" target="_blank" href="https://www.facebook.com/stosic.predrag.96">
+              <span class="icon">
+                <i class="fab fa-facebook-square"></i>
+              </span>
+              <span>Facebook</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- END NAV -->
+<section class="hero is-info is-medium is-bold">
+  <div class="hero-body" style="background-image:url(/assets/hero.jpeg);">
+    <div class="container has-text-centered">
+      <h1 class="subtitle is-2" id="type">In the web we love making things complicated and then going back to the basics...</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <!-- START ARTICLE FEED -->
+  <section class="articles">
+    <div class="column is-8 is-offset-2">
+      <!-- START ARTICLE -->
+      
+<div class="card article">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-center">
+        <img src="/assets/10print.png" class="author-image" alt="Placeholder image">
+      </div>
+      <div class="media-content has-text-centered">
+        <p class="title article-title"><a href="/2018/07/21/react-ghibli-search/" class="has-text-dark">Studio Ghibli - movies app</a></p>
+        <p class="subtitle is-6 article-subtitle">
+          <a href="/">Predrag Stošić</a>
+        </p>
+        <p class="subtitle is-6 article-subtitle">
+        21. July 2018
+        &middot;
+        
+        
+          10 min read
+        
+        </p>
+        <div class="divider has-background-grey-light"></div>
+      </div>
+    </div>
+    <figure class="image">
+      <img src=/assets/ghibli-search/ghibli-search.png>
+    </figure>
+    <div class="content article-body">
+      <p class="card-text"><blockquote> <p>Notice: This article is not a tutorial, but just a simple and quick overview on how this app was built.</p> </blockquote> <p>GitHub repository <a href="https://github.com/toddmotto/public-apis">public-apis</a> is a great place if you’re looking for a free API for your next project. One of them is Studio’s Ghibli API which contains a list of their movies, as well as a list of characters, places etc. Since I’m learning React, I decided to try it out in a mini project, simply called...</p>
+    </div>
+    <a href="/2018/07/21/react-ghibli-search/" class="button is-info is-rounded read-more">Read more</a>
   </div>
 </div>
-    <div class="container">
-    
-  <div class="card mb-3 shadow-sm" style="margin-top: 4rem">
-    <a href="/2018/07/13/react-ghibli-search/">
-      <div class="card-image" style="background-image: url('https://raw.githubusercontent.com/stoleS/ghibli-search-react/master/ghibli-search-final.png')"></div>
-    </a>
-    <div class="card-body">
-      <h5 class="card-title font-weight-bold"><a href="/2018/07/13/react-ghibli-search/">Studio Ghibli movies info. (React)</a></h5>
-      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sodales ac orci vitae vulputate. Maecenas in tortor non metus euismod sollicitudin. Etiam tincidunt pretium diam gravida elementum. Phasellus eu lacus...<a href="/2018/07/13/react-ghibli-search/" class="read-more"> Read more</a></p>
-      <p class="card-text">
-        <small class="text-muted">13/07/2018</small>
-      </p>
+
+<div class="card article">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-center">
+        <img src="/assets/10print.png" class="author-image" alt="Placeholder image">
+      </div>
+      <div class="media-content has-text-centered">
+        <p class="title article-title"><a href="/2018/07/13/projects-blog/" class="has-text-dark">Projects Blog</a></p>
+        <p class="subtitle is-6 article-subtitle">
+          <a href="/">Predrag Stošić</a>
+        </p>
+        <p class="subtitle is-6 article-subtitle">
+        13. July 2018
+        &middot;
+        
+        
+          8 min read
+        
+        </p>
+        <div class="divider has-background-grey-light"></div>
+      </div>
     </div>
+    <figure class="image">
+      <img src=/assets/projects-blog/projects-blog.png>
+    </figure>
+    <div class="content article-body">
+      <p class="card-text"><p>While looking at my <a href="https://github.com/stoleS">github profile</a>, I thought it would be good to better describe some more important projects in a blog type website. Since I worked with <a href="https://jekyllrb.com/">Jekyll</a> before, I decided to use it as a backbone for this project. So here it is, in all of it’s glory. In the next few paragraphs I’ll try to explain some of more important things of this project.</p> <h3 id="dependencies">Dependencies</h3> <p>For this project I used only one npm dependency,...</p>
+    </div>
+    <a href="/2018/07/13/projects-blog/" class="button is-info is-rounded read-more">Read more</a>
   </div>
+</div>
+ 
 
-  <div class="card mb-3 shadow-sm" style="margin-top: 4rem">
-    <a href="/2018/07/13/projects-blog/">
-      <div class="card-image" style="background-image: url('https://raw.githubusercontent.com/stoleS/projects-blog-source/master/projects-blog.png')"></div>
-    </a>
-    <div class="card-body">
-      <h5 class="card-title font-weight-bold"><a href="/2018/07/13/projects-blog/">Personal projects blog (Jekyll)</a></h5>
-      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sodales ac orci vitae vulputate. Maecenas in tortor non metus euismod sollicitudin. Etiam tincidunt pretium diam gravida elementum. Phasellus eu lacus...<a href="/2018/07/13/projects-blog/" class="read-more"> Read more</a></p>
-      <p class="card-text">
-        <small class="text-muted">13/07/2018</small>
-      </p>
+
+
+      <!-- END ARTICLE -->
     </div>
-  </div>
-
-
-
-    </div>
+  </section>
+  <!-- END ARTICLE FEED -->
 </div>
 <footer class="footer">
-  <div class="container d-flex flex-column align-items-center justify-content-center">
-    <p class="text-white text-justify">
+  <div class="content has-text-centered">
+    <p>
       <a href="/">Predrag Stošić</a>, 2018. The source code is licensed
       <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content is licensed
-      <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC ANS 4.0</a>.</p>
+      <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC ANS 4.0</a><br><br>Powered by:<br><a href=""><img src="https://raw.githubusercontent.com/jekyll/brand/master/jekyll-logo-black-red-transparent.png"
+          alt="Jekyll" width="128" height="24"></a>
+      <br>
+      <a href="https://bulma.io">
+        <img src="https://bulma.io/images/made-with-bulma--semiblack.png" alt="Made with Bulma" width="128" height="24">
+      </a>
+    </p>
+    <p>Original theme by <a href="https://github.com/dansup">@dansup</a></p>
   </div>
 </footer>
+<script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
 
-<script src="/assets/jquery.min.js"></script>
-<script src="/assets/popper.min.js"></script>
-<script src="/assets/bootstrap.min.js"></script>
+    // Get all "navbar-burger" elements
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    // Check if there are any navbar burgers
+    if ($navbarBurgers.length > 0) {
+
+      // Add a click event on each of them
+      $navbarBurgers.forEach(el => {
+        el.addEventListener('click', () => {
+
+          // Get the target from the "data-target" attribute
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+
+          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+
+        });
+      });
+    }
+  });
+
+  // Typing effect
+  let i = 0;
+  let text = document.getElementById("type").innerHTML;
+  document.getElementById("type").innerHTML = "";
+  let speed = 50;
+
+  function type() {
+    if (i < text.length) {
+      document.getElementById("type").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(type, speed);
+    }
+  }
+
+  function removeLoader() {
+    document.getElementById("loader").classList.remove("is-active");
+  }
+
+  window.addEventListener("load", () => {
+    const loadTime = window.performance.timing.domContentLoadedEventEnd- window.performance.timing.navigationStart;
+    let addedTime = 0;
+
+    if(loadTime <= 1000) {
+      addedTime = 1000 - loadTime;
+    }
+
+    setTimeout(removeLoader, addedTime);
+    type();
+  });
+  
+</script>
 </body>
 
 </html>

@@ -4,70 +4,402 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" type="image/png" sizes="32x32" href=http://0.0.0.0:4000/assets/favicon.png>
+  <title>Predrag Stošić</title>
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="stylesheet" href="/assets/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 
-<body class="bg-light">
-<div class="wrapper">
-    <div class="container">
-  <div class="row">
-    <div class="col-md-6 col-sm-12">
-      <h1 class="my-0 mr-md-auto font-weight-bold display-4">
-        <a href="/" class="title">
-          stole
+<body style="background-color: #F0F2F4" class="has-navbar-fixed-top">
+<script src="/assets/loading.js"></script>
+
+<!-- START NAV -->
+<nav class="navbar is-fixed-top">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item logo" href="/">
+        <img src=http://0.0.0.0:4000/assets/logo.png alt="Stole">
+      </a>
+      <span class="navbar-burger burger" data-target="navbarMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </div>
+    <div id="navbarMenu" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item is-active" href="/">
+          Home
         </a>
-      </h1>
+        <a class="navbar-item" href="/archive">
+          Archive
+        </a>
+        
+        <a class="navbar-item" href="/contact">
+          Contact
+        </a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Social
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" target="_blank" href="https://github.com/stoleS">
+              <span class="icon">
+                <i class="fab fa-github"></i>
+              </span>
+              <span>GitHub</span>
+            </a>
+            <a class="navbar-item" target="_blank" href="https://linkedin.com/in/predragstosic96">
+              <span class="icon">
+                <i class="fab fa-linkedin"></i>
+              </span>
+              <span>LinkedIn</span>
+            </a>
+            <a class="navbar-item" target="_blank" href="https://www.facebook.com/stosic.predrag.96">
+              <span class="icon">
+                <i class="fab fa-facebook-square"></i>
+              </span>
+              <span>Facebook</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</nav>
+<!-- END NAV -->
+<section class="hero is-info is-medium is-bold">
+  <div class="hero-body" style="background-image:url(/assets/projects-blog/projects-blog.png);">
+    <div class="container has-text-centered">
+      <h1 class="subtitle is-2" id="type">Projects Blog</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <!-- START ARTICLE FEED -->
+  <section class="articles">
+    <div class="column is-8 is-offset-2">
+      <!-- START ARTICLE -->
+      <div class="card article">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-center">
+        <img src=/assets/10print.png class="author-image" alt="Placeholder image">
+      </div>
+      <div class="media-content has-text-centered">
+        <p class="subtitle is-6 article-subtitle">
+          <a href="#">Predrag Stošić</a>
+        </p>
+        <p class="subtitle is-6 article-subtitle">
+        13. July 2018
+        &middot;
+        
+        
+          8 min read
+        
+        </p>
+        <div class="divider has-background-grey-light"></div>
+        <figure class="image">
+          <img src=/assets/projects-blog/projects-blog.png>
+        </figure>
+      </div>
+    </div>
+    <div class="content article-body">
+      <p>While looking at my <a href="https://github.com/stoleS">github profile</a>, I thought it would be good to better describe some more important projects in a blog type website. Since I worked with <a href="https://jekyllrb.com/">Jekyll</a> before, I decided to use it as a backbone for this project. So here it is, in all of it’s glory. In the next few paragraphs I’ll try to explain some of more important things of this project.</p>
 
-    <div class="col-md-6 col-sm-12 d-flex align-items-center justify-content-end">
-      <nav class="my-2 my-md-0 items line-up">
-        <a class="p-1 m-1 text-muted font-weight-bold" href="https://github.com/stoleS" target="_blank">github</a>
-        <a class="p-1 m-1 text-muted font-weight-bold" href="/archive">archive</a>
-        <a class="p-1 m-1 text-muted font-weight-bold" href="#">about</a>
-        <a class="p-1 m-1 text-muted font-weight-bold" href="#">contact</a>
-      </nav>
+<h3 id="dependencies">Dependencies</h3>
+
+<p>For this project I used only one npm dependency, Bulma:</p>
+
+<ul>
+  <li><a href="https://bulma.io/">Bulma</a></li>
+</ul>
+
+<p>You can install it like this:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--save</span> bulma
+</code></pre></div></div>
+
+<h3 id="folder-structure">Folder structure</h3>
+
+<p>Here is the folder structure for this jekyll blog:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">_config.yml</code> : Jekyll <a href="http://jekyllrb.com/docs/configuration/">configuration</a></li>
+  <li><code class="highlighter-rouge">_layouts/</code>
+    <ul>
+      <li><code class="highlighter-rouge">default.html</code> : default template</li>
+      <li><code class="highlighter-rouge">post.html</code> : post template</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">_includes/</code>
+    <ul>
+      <li><code class="highlighter-rouge">nav.html</code> : navigation bar</li>
+      <li><code class="highlighter-rouge">footer.html</code> : header and footer used by the default template</li>
+      <li><code class="highlighter-rouge">head.html</code> : site navigation</li>
+      <li><code class="highlighter-rouge">hero</code> : page hero image and text</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">_posts</code> : posts for this blog</li>
+  <li><code class="highlighter-rouge">_sass</code>: sass stylesheets</li>
+  <li><code class="highlighter-rouge">assets</code> : assets for the blog and posts</li>
+  <li><code class="highlighter-rouge">index.html</code> : main page</li>
+  <li><code class="highlighter-rouge">archive.html</code> : archive page</li>
+  <li><code class="highlighter-rouge">contact.html</code> : contact page</li>
+  <li><code class="highlighter-rouge">package.json</code> : npm dependencies</li>
+</ul>
+
+<h2 id="layouts">Layouts</h2>
+
+<p>As you can see from the folder structure of this blog, we have only two layouts:</p>
+
+<ol>
+  <li>default.html</li>
+  <li>post.html</li>
+</ol>
+
+<h3 id="1-defaulthtml">1) default.html</h3>
+
+<p>This layout is used as a template for all the pages on this blog, except for single post page, and it looks like this:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% include head.html %}
+{% include nav.html %}
+{% include hero.html %}
+<span class="nt">&lt;div</span>  <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;section</span>  <span class="na">class=</span><span class="s">"articles"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span>  <span class="na">class=</span><span class="s">"column is-8 is-offset-2"</span><span class="nt">&gt;</span>
+      {{ content }}
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/section&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+{% include footer.html %}
+</code></pre></div></div>
+
+<p>First of all, we need to include blocks that every page will use, starting with head, then navigation and finishing with hero section. After that we have container that holds all of our articles or only one of them if we are reading a specific one. And at the end we include our footer.</p>
+
+<h3 id="2-posthtml">2) post.html</h3>
+
+<p>This is a single post layout and it extends default layout. It is used to hold a single post on it’s rendered page. Some of the more interesting parts of post page are:</p>
+
+<ul>
+  <li>Assumed read time</li>
+  <li>Next/previous post</li>
+</ul>
+
+<h4 id="assumed-read-time">Assumed read time</h4>
+
+<p><img src="/assets/projects-blog/read-time.png" alt="Read Time" /></p>
+
+<p>Read time is calculated like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% assign words = page.content  | number_of_words %}
+{% if words &lt; 270 %}
+  1 min read
+{% else %}
+  {{ words | divided_by:135 }} min read
+{% endif %}
+</code></pre></div></div>
+
+<p>So, the first thing we will want to do is get the word count.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% assign words = page.content  | number_of_words %}
+</code></pre></div></div>
+
+<p>After that, we divide it with number of words you can read per minute. Average is 180, but that’s quite slow, so we bump it up to 270. If post doesn’t contain more than 270 words, we’ll say that the read time is one minute. But if a post contains more than 270 but less than 540, Liquid will round that down to one minute, so we have to check if it is less than 540. Better explanation, and original solution is available by <a href="https://carlosbecker.com/posts/jekyll-reading-time-without-plugins/">Carlos Alexandro Becker</a> in his blog post.</p>
+
+<h4 id="nextprevious-post">Next/previous post</h4>
+
+<p>We can easily access next and previous post from one that we are currently looking at with page.next and page.previous:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% if page.next.url %}
+  &lt;a  href="{{ page.next.url }}"&gt;{{ page.next.title }}&lt;/a&gt;
+{% endif %}
+{% if page.previous.url %}
+  &lt;a  href="{{ page.previous.url }}"&gt;{{ page.previous.title }}&lt;/a&gt;
+{% endif %}
+</code></pre></div></div>
+
+<h2 id="index-page-pagination">Index page pagination</h2>
+
+<p>To implement the pagination on this blog’s index page, I’m using Jekyll’s <a href="https://github.com/sverrirs/jekyll-paginate-v2">pagination</a> plugin:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% if paginator.total_pages &gt; 1 %}
+  &lt;nav role="navigation" aria-label="pagination"&gt;
+  {% if paginator.previous_page and paginator.next_page != true %}
+    &lt;a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"&gt;&amp;laquo; Previous&lt;/a&gt;
+    &lt;a disabled&gt;Next page &amp;raquo;&lt;/a&gt;
+  {% endif %}
+  {% if paginator.page_trail %}
+    &lt;ul&gt;
+    {% for trail in paginator.page_trail %}
+      &lt;li&gt;
+        &lt;a href="{{ trail.path | prepend: site.baseurl }}"  title="{{trail.title}}"  class="{% if page.url == trail.path %}is-current{% endif %}"&gt;{{ trail.num }}&lt;/a&gt;
+      &lt;/li&gt;
+    {% endfor %}
+    &lt;/ul&gt;
+  {% endif %}
+  {% if paginator.next_page and paginator.previous_page != true %}
+    &lt;a  href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"&gt;Next page &amp;raquo;&lt;/a&gt;
+    &lt;a disabled&gt;&amp;laquo; Previous&lt;/a&gt;
+  {% endif %}
+  &lt;/nav&gt;
+{% endif %}
+</code></pre></div></div>
+
+<p>First of all, we check if there are more than one page in our paginator (number of posts per page is defined in yaml front matter in paginator plugin section):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% if paginator.total_pages &gt; 1 %}
+</code></pre></div></div>
+
+<p>After that, we have pagination container:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;nav role="navigation" aria-label="pagination"&gt;
+</code></pre></div></div>
+
+<p>Next, there is a check for previous and next page. If there is a previous, but there isn’t a next page, we display previous page button with path to that page, and disabled “next page” button:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% if paginator.previous_page and paginator.next_page != true %}
+  &lt;a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"&gt;&amp;laquo; Previous&lt;/a&gt;
+  &lt;a disabled&gt;Next page &amp;raquo;&lt;/a&gt;
+{% endif %}
+</code></pre></div></div>
+
+<p>Between “next” and “previous” buttons there are page number buttons:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% if paginator.page_trail %}
+  &lt;ul&gt;
+  {% for trail in paginator.page_trail %}
+    &lt;li&gt;
+      &lt;a href="{{ trail.path | prepend: site.baseurl }}"  title="{{trail.title}}"  class="{% if page.url == trail.path %}is-current{% endif %}"&gt;{{ trail.num }}&lt;/a&gt;
+    &lt;/li&gt;
+  {% endfor %}
+  &lt;/ul&gt;
+{% endif %}
+</code></pre></div></div>
+
+<p>Here we check if there are multiple pages, and if there is, we can display their number with link to access each one of them.</p>
+
+<h2 id="archive-page">Archive page</h2>
+
+<p>Archive page is one of the more important pages in every blog. It’s purpose is to give as easy access to all of the posts in a blog, sorted by date. Building the archive page in Jekyll is quite easy:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% for post in site.posts %}
+  {% assign currentDate = post.date  | date: "%B %Y" %}
+  {% if currentDate != myDate %}
+    {% unless forloop.first %}
+      &lt;/ul&gt;
+    {% endunless %}
+    &lt;h1&gt;{{ currentDate }}&lt;/h1&gt;
+    &lt;ul&gt;
+    {% assign myDate = currentDate %}
+  {% endif %}
+  &lt;li&gt;
+    &lt;a href="{{ post.url }}"&gt;
+      &lt;span&gt;{{ post.date  | date: "%B %-d, %Y" }}&lt;/span&gt; - {{ post.title }}
+    &lt;/a&gt;
+  {% if forloop.last %}
+    &lt;/ul&gt;
+  {% endif %}
+{% endfor %}
+</code></pre></div></div>
+
+<p>We loop through all blog posts, grab the post date (month and year), print that first, then compare dates of the post and loop date, and after that print the posts which are in current date range.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>This was a very interesting and fun project and I gained a lot of knowledge on how templating and static site generator works. Jekyll is a great tool for building simple blogs, and even some more complex pages. So if you are in a need for such a website, you shoud check it. GitHub repository for this project is available <a href="https://github.com/stoleS/projects-blog-source">here</a>. Thanks for reading and happy coding.</p>
+
     </div>
   </div>
 </div>
-    <div class="container">
-    <div class="post-wrapper">
-  <div class="card bg-dark text-white single-post-header">
-  <img class="card-img" src="https://raw.githubusercontent.com/stoleS/projects-blog-source/master/projects-blog.png" alt="Card image">
-  <div class="card-img-overlay d-flex align-items-center justify-content-center">
-    <h5 class="card-title single-post-title">Personal projects blog (Jekyll)</h5>
-  </div>
-</div> 
-  <p class="text-muted font-italic post-author text-right">Posted by <a href="https://github.com/stoleS" class="read-more">Predrag Stošić</a> on Jul 13, 2018</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sodales ac orci vitae vulputate. Maecenas in tortor non metus euismod sollicitudin. Etiam tincidunt pretium diam gravida elementum. Phasellus eu lacus ut massa sagittis suscipit eget eu dui. Donec metus enim, sodales convallis mauris varius, vestibulum sollicitudin lorem. Mauris venenatis nulla ut eros blandit gravida. Nulla gravida, tortor nec dapibus suscipit, eros enim consequat odio, at tempus massa sapien vel felis. Mauris iaculis massa mi.</p>
+<nav class="pagination is-centered" role="navigation" aria-label="pagination">
+  
+    <a href="/2018/07/21/react-ghibli-search/" class="pagination-previous">&laquo; Studio Ghibli - movies app</a>
+   
+  
+</nav>
 
-<p>Integer mollis tortor ac adipiscing facilisis. Donec egestas vel ligula vitae vestibulum. Fusce laoreet ligula nec luctus vestibulum. Sed et odio metus. Aliquam interdum vel elit et lacinia. Sed porta consectetur ligula, non bibendum nulla varius sit amet. Nullam a feugiat massa. Fusce quis augue at enim aliquam sodales a nec nulla. Morbi fringilla nulla et dui laoreet ornare. Praesent id turpis urna. Quisque mattis in tellus in cursus. Proin pellentesque mollis nisi quis faucibus. Fusce in laoreet neque. Nunc in risus non turpis tristique vulputate in bibendum tellus.</p>
-
-<p>Sed quis sem consectetur, mattis nunc vel, tincidunt est. Vivamus vitae risus eget erat varius fermentum non sed nisi. Fusce eget diam in tellus aliquet suscipit ac non dolor. Suspendisse pretium elit vel mauris convallis aliquet. Etiam blandit, nulla ut posuere pulvinar, enim mi imperdiet quam, aliquam tincidunt tellus est nec velit. Aliquam ut ante tincidunt, commodo dolor id, accumsan nunc. Mauris semper dolor a ligula vulputate adipiscing. Nam euismod velit massa, vitae sodales tortor consectetur nec. Vivamus nec nisl at nulla hendrerit porttitor. Aliquam a nibh et nunc blandit vestibulum. Quisque odio risus, volutpat eget rhoncus vel, rutrum sed mi. Ut id mi eget risus volutpat imperdiet lacinia in justo. In hac habitasse platea dictumst. Aliquam a nunc elementum, accumsan nibh vel, ornare quam. Cras tellus sapien, blandit in mattis sit amet, ultricies non ligula. Phasellus pharetra tincidunt elit, sit amet gravida sapien tincidunt sit amet.</p>
-
-  <ul class="pager pagination">
-    
-    <li class="page-item float-left font-weight-bold">
-      <a href="/2018/07/13/react-ghibli-search/" class="font-weight-bold">&laquo; Studio Ghibli movies info. (React)</a>
-    </li>
-     
-  </ul>
-</div>
+      <!-- END ARTICLE -->
     </div>
+  </section>
+  <!-- END ARTICLE FEED -->
 </div>
 <footer class="footer">
-  <div class="container d-flex flex-column align-items-center justify-content-center">
-    <p class="text-white text-justify">
+  <div class="content has-text-centered">
+    <p>
       <a href="/">Predrag Stošić</a>, 2018. The source code is licensed
       <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content is licensed
-      <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC ANS 4.0</a>.</p>
+      <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC ANS 4.0</a><br><br>Powered by:<br><a href=""><img src="https://raw.githubusercontent.com/jekyll/brand/master/jekyll-logo-black-red-transparent.png"
+          alt="Jekyll" width="128" height="24"></a>
+      <br>
+      <a href="https://bulma.io">
+        <img src="https://bulma.io/images/made-with-bulma--semiblack.png" alt="Made with Bulma" width="128" height="24">
+      </a>
+    </p>
+    <p>Original theme by <a href="https://github.com/dansup">@dansup</a></p>
   </div>
 </footer>
+<script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
 
-<script src="/assets/jquery.min.js"></script>
-<script src="/assets/popper.min.js"></script>
-<script src="/assets/bootstrap.min.js"></script>
+    // Get all "navbar-burger" elements
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    // Check if there are any navbar burgers
+    if ($navbarBurgers.length > 0) {
+
+      // Add a click event on each of them
+      $navbarBurgers.forEach(el => {
+        el.addEventListener('click', () => {
+
+          // Get the target from the "data-target" attribute
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+
+          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+
+        });
+      });
+    }
+  });
+
+  // Typing effect
+  let i = 0;
+  let text = document.getElementById("type").innerHTML;
+  document.getElementById("type").innerHTML = "";
+  let speed = 50;
+
+  function type() {
+    if (i < text.length) {
+      document.getElementById("type").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(type, speed);
+    }
+  }
+
+  function removeLoader() {
+    document.getElementById("loader").classList.remove("is-active");
+  }
+
+  window.addEventListener("load", () => {
+    const loadTime = window.performance.timing.domContentLoadedEventEnd- window.performance.timing.navigationStart;
+    let addedTime = 0;
+
+    if(loadTime <= 1000) {
+      addedTime = 1000 - loadTime;
+    }
+
+    setTimeout(removeLoader, addedTime);
+    type();
+  });
+  
+</script>
 </body>
 
 </html>
