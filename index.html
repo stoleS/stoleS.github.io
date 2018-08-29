@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="icon" type="image/png" sizes="32x32" href=http://0.0.0.0:4000/assets/favicon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/assets/favicon.png>
   <title>Predrag Stošić</title>
   <meta name="description" content="">
   <meta name="author" content="">
@@ -13,15 +13,20 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 
-<body style="background-color: #F0F2F4" class="has-navbar-fixed-top">
+<body style="background-color: #F0F2F4">
 <script src="/assets/loading.js"></script>
+<a class="button is-info is-outlined" id="to-top" onClick="toTop()">
+  <span class="icon">
+    <i class="fas fa-caret-up fa-lg"></i>
+  </span>
+</a>
 
 <!-- START NAV -->
-<nav class="navbar is-fixed-top">
+<nav class="navbar">
   <div class="container">
     <div class="navbar-brand">
       <a class="navbar-item logo" href="/">
-        <img src=http://0.0.0.0:4000/assets/logo.png alt="Stole">
+        <img src="/assets/logo.png" alt="Stole">
       </a>
       <span class="navbar-burger burger" data-target="navbarMenu">
         <span></span>
@@ -34,15 +39,15 @@
         <a class="navbar-item is-active" href="/">
           Home
         </a>
-        <a class="navbar-item" href="/archive">
+        <a class="navbar-item " href="/archive">
           Archive
         </a>
         
-        <a class="navbar-item" href="/contact">
+        <a class="navbar-item " href="/contact">
           Contact
         </a>
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
+          <a class="navbar-link" id="social">
             Social
           </a>
           <div class="navbar-dropdown">
@@ -173,6 +178,7 @@
 </footer>
 <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
 <script>
+  window.onscroll = () => {backToTop()};
   document.addEventListener('DOMContentLoaded', () => {
 
     // Get all "navbar-burger" elements
@@ -212,8 +218,13 @@
     }
   }
 
+  function hideLoader() {
+    document.getElementById("loader").style.display = "none";
+  }
+
   function removeLoader() {
     document.getElementById("loader").classList.remove("is-active");
+    setTimeout(hideLoader, 350);
   }
 
   window.addEventListener("load", () => {
@@ -228,6 +239,19 @@
     type();
   });
   
+  // Back to top function
+  function backToTop() {
+    if(document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      document.getElementById("to-top").style.display = "block";
+    } else {
+      document.getElementById("to-top").style.display = "none";
+    }
+  }
+
+  function toTop() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
 </script>
 </body>
 
